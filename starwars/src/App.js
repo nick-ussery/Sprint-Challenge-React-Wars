@@ -11,6 +11,13 @@ const Button = styled.button`
   radius: 5%;
   background-color: black;
   color: white;
+  position: fixed;
+  bottom: 0;
+
+  :hover{
+    color: black;
+    background-color: red;
+  }
 `
 
 const CharacterRow = styled.div`
@@ -18,7 +25,7 @@ const CharacterRow = styled.div`
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 25px;
+  padding-left: 75px;
   text-align: center;
 `
 
@@ -71,8 +78,8 @@ if(characterList.length !==0){
       <CharacterRow>
       {allCharacters}
       </CharacterRow>
-      <Button onClick={()=>{pageHandler('prev')}}>Previous</Button>
-      <Button onClick={()=>{pageHandler('next')}}>Next</Button>
+      <Button style={{left: '0'}} onClick={()=>{pageHandler('prev')}}>Previous</Button>
+      <Button style={{right: '0'}} onClick={()=>{pageHandler('next')}}>Next</Button>
     </Container>
   );
 }
